@@ -1,26 +1,26 @@
 {
-  "name": "universal-plugin-system",
-  "version": "0.1.6",
-  "description": "Kerangka kerja yang memungkinkan penambahan atau penggantian fitur secara dinamis melalui penggunaan plugin.",
-  "main": "lib/index.js",
-  "type": "module",
-  "scripts": {
-    "test": "node test/framework.test.js"
-  },
-  "keywords": [
-    "plugin-system"
-  ],
-  "author": "s9n6",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/s9n6/universal-plugin-system.git"
-  },
-  "bugs": {
-    "url": "https://github.com/s9n6/universal-plugin-system/issues"
-  },
-  "homepage": "https://github.com/s9n6/universal-plugin-system#readme",
-  "files": [
-    "lib/"
-  ]
+    "name": "universal-plugin-system",
+    "version": "0.1.6",
+    "description": "Kerangka kerja yang memungkinkan penambahan atau penggantian fitur secara dinamis melalui penggunaan plugin.",
+    "main": "lib/index.js",
+    "type": "module",
+    "scripts": {
+        "test": "node test/ups.test.js"
+    },
+    "keywords": [
+        "plugin-system"
+    ],
+    "author": "s9n6",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/s9n6/universal-plugin-system.git"
+    },
+    "bugs": {
+        "url": "https://github.com/s9n6/universal-plugin-system/issues"
+    },
+    "homepage": "https://github.com/s9n6/universal-plugin-system#readme",
+    "files": [
+        "lib/"
+    ]
 }
