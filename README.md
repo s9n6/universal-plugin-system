@@ -1,4 +1,4 @@
-# UniversalPluginSystem(UPS)
+# Universal Plugin System
 
 Tambahkan atau ganti plugin secara dinamis. Mendukung `sync`, `callback`, dan `promise`, sehingga fleksibel untuk berbagai kebutuhan pengembangan.
 
