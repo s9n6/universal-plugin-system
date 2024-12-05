@@ -8,7 +8,7 @@ Tambahkan atau ganti plugin secara dinamis. Mendukung `sync`, `callback`, dan `p
 // import
 import ups from 'universal-plugin-system';
 
-// inisialisasi
+// buat instance ups
 const system = ups();
 
 // plugin sync
@@ -33,7 +33,7 @@ system.use({
     },
 });
 
-// Jalankan semua plugin
+// jalankan semua plugin
 system.run(() => {
     console.log('Semua plugin selesai dijalankan!');
 });

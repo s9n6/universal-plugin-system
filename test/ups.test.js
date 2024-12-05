@@ -1,31 +1,27 @@
 import assert from 'assert';
-import framework from '../lib/index.js';
+import ups from '../lib/index.js';
 
-// Buat instance framework
-const fw = framework();
+// buat instance ups
+const system = ups();
 
-// Variabel untuk melacak urutan eksekusi
+// variabel untuk melacak urutan eksekusi
 let log = [];
 
-// Tambahkan plugin sinkron
-fw.use({
-    run: () => {
-        log.push('Plugin sinkron dijalankan!');
-    },
+// plugin sync
+system.use({
+    run: () => log.push('Plugin sync dijalankan!'),
 });
 
-// Tambahkan plugin dengan callback
-fw.use({
+// plugin callback
+system.use({
     run: () => {
         log.push('Plugin callback mulai...');
-        setTimeout(() => {
-            log.push('Plugin callback selesai!');
-        }, 15);
+        setTimeout(() => log.push('Plugin callback selesai!'), 15);
     },
 });
 
-// Tambahkan plugin Promise
-fw.use({
+// plugin Promise
+system.use({
     run: async () => {
         log.push('Plugin Promise mulai...');
         await new Promise((resolve) => setTimeout(resolve, 15));
@@ -33,17 +29,18 @@ fw.use({
     },
 });
 
-// Jalankan framework dan lakukan pengecekan
+// jalankan ups dan lakukan pengecekan
 async function runTests() {
-    await fw.run(() => {
+    // jalankan semua plugin
+    await system.run(() => {
         log.push('Semua plugin selesai dijalankan!');
     });
 
-    // Cek urutan eksekusi
+    // cek urutan eksekusi
     assert.deepStrictEqual(
         log,
         [
-            'Plugin sinkron dijalankan!',
+            'Plugin sync dijalankan!',
             'Plugin callback mulai...',
             'Plugin Promise mulai...',
             'Plugin callback selesai!',
@@ -52,7 +49,6 @@ async function runTests() {
         ],
         'Urutan eksekusi plugin tidak sesuai'
     );
-
     console.log('Semua pengujian berhasil!');
 }
 
